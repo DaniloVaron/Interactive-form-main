@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Parte del hero */
+
+.hero {
+  background-image: var(--Very_Dark_Violet);
+  /* width: 100%; */
+  height: 35vh;
+}
+
+/* Feel free to remove these styles or customise in your own stylesheet 👍  */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
