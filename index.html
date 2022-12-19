@@ -13,6 +13,12 @@
     />
 
     <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Normalize -->
     <link rel="stylesheet" href="./css/normalize.css" />
@@ -28,15 +34,103 @@
     <link rel="stylesheet" href="./css/responsive.css" />
   </head>
   <body>
-    <section class="hero"></section>
-    <main class="form"></main>
-    0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
-    Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
-    e.g. 123 Confirm
+    <section class="hero">
+      <div class="hero__card__back">
+        <img
+          src="./images/bg-card-back.png"
+          alt="card-back"
+          class="hero__card__back__image"
+        />
+        <span class="hero__card__back__cvc">000</span>
+      </div>
 
+      <div class="hero__card__front">
+        <img
+          src="./images/bg-card-front.png"
+          alt="card-front"
+          class="hero__card__front__image"
+        />
+      </div>
+      <img
+        src="./images/card-logo.svg"
+        alt="logo"
+        class="hero__card__front__logo"
+      />
+      <span class="hero__card__front__number">0000 0000 0000 0000</span>
+      <span class="hero__card__front__name">Jane Appleseed</span>
+      <span class="hero__card__front__date">00/00</span>
+    </section>
+
+    <form class="form">
+      <label for="" class="form__name__label label"> Cardholder Name </label>
+      <input
+        type="text"
+        name=""
+        id="card_name"
+        required
+        class="form__name__input input"
+        placeholder="e.g. Jane Appleseed"
+      />
+      <label for="" class="form__number__label label"> Card Number </label>
+      <input
+        type="number"
+        name=""
+        id="card_number"
+        oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+        minlength="16"
+        maxlength="16"
+        required
+        placeholder="e.g. 1234 5678 9123 0000"
+        class="form__number__input input"
+      />
+      <div class="form__date-cvc">
+        <label for="" class="date__month__label label">
+          Exp. Date (MM/YY)
+        </label>
+        <input
+          type="number"
+          name=""
+          id="card_month"
+          oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+          minlength="2"
+          maxlength="2"
+          required
+          placeholder="MM"
+          class="date__month__input input"
+        />
+        <input
+          type="number"
+          name=""
+          id="card_year"
+          oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+          minlength="2"
+          maxlength="2"
+          required
+          placeholder="YY"
+          class="date__year__input input"
+        />
+        <label for="" class="cvc__label label"> CVC </label>
+        <input
+          type="number"
+          name=""
+          id="card_cvc"
+          oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+          minlength="3"
+          maxlength="3"
+          required
+          placeholder="e.g. 123"
+          class="cvc__input input"
+        />
+      </div>
+      <input type="submit" value="Confirm" class="form__button" />
+    </form>
     <!-- Completed state start -->
-
-    Thank you! We've added your card details Continue
+    <div class="confirm">
+      <img src="./images/icon-complete.svg" alt="complete" />
+      <h2>Thank you!</h2>
+      <p>We've added your card details</p>
+      <button>Continue</button>
+    </div>
 
     <!-- <div class="attribution">
       Challenge by
