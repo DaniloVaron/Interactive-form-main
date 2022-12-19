@@ -305,7 +305,7 @@
   }
 }
 
-@media (min-height: 800px) {
+/* @media (min-height: 800px) {
   .hero__card__front__image {
     top: 227px;
   }
@@ -363,4 +363,4 @@
   .hero__card__back__cvc {
     top: 538px;
   }
-}
+} */

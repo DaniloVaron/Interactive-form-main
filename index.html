@@ -41,7 +41,7 @@
           alt="card-back"
           class="hero__card__back__image"
         />
-        <span class="hero__card__back__cvc">000</span>
+        <span class="hero__card__back__cvc" id="cvc">000</span>
       </div>
 
       <div class="hero__card__front">
@@ -56,33 +56,43 @@
         alt="logo"
         class="hero__card__front__logo"
       />
-      <span class="hero__card__front__number">0000 0000 0000 0000</span>
-      <span class="hero__card__front__name">Jane Appleseed</span>
-      <span class="hero__card__front__date">00/00</span>
+      <span class="hero__card__front__number" id="number"
+        >0000 0000 0000 0000</span
+      >
+      <span class="hero__card__front__name" id="name">Jane Appleseed</span>
+      <span class="hero__card__front__date month" id="month">00</span>
+      <span class="hero__card__front__date diagonal" id="date">/</span>
+      <span class="hero__card__front__date year" id="year">00</span>
     </section>
 
     <form class="form">
-      <label for="" class="form__name__label label"> Cardholder Name </label>
-      <input
-        type="text"
-        name=""
-        id="card_name"
-        required
-        class="form__name__input input"
-        placeholder="e.g. Jane Appleseed"
-      />
-      <label for="" class="form__number__label label"> Card Number </label>
-      <input
-        type="number"
-        name=""
-        id="card_number"
-        oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
-        minlength="16"
-        maxlength="16"
-        required
-        placeholder="e.g. 1234 5678 9123 0000"
-        class="form__number__input input"
-      />
+      <div>
+        <label for="" class="form__name__label label"> Cardholder Name </label>
+        <input
+          type="text"
+          name=""
+          id="nameInput"
+          class="form__name__input input margin"
+          placeholder="e.g. Jane Appleseed"
+        />
+        <p class="mesagge_error">Can't be blank</p>
+      </div>
+
+      <div>
+        <label for="" class="form__number__label label"> Card Number </label>
+        <input
+          type="number"
+          name=""
+          id="numberInput"
+          oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
+          minlength="16"
+          maxlength="16"
+          placeholder="e.g. 1234 5678 9123 0000"
+          class="form__number__input input margin"
+        />
+        <p class="mesagge_error">Can't be blank</p>
+      </div>
+
       <div class="form__date-cvc">
         <label for="" class="date__month__label label">
           Exp. Date (MM/YY)
@@ -90,46 +100,47 @@
         <input
           type="number"
           name=""
-          id="card_month"
+          id="monthInput"
           oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
           minlength="2"
           maxlength="2"
-          required
           placeholder="MM"
           class="date__month__input input"
         />
+        <p class="mesagge_error">Can't be blank</p>
+
         <input
           type="number"
           name=""
-          id="card_year"
+          id="yearInput"
           oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
           minlength="2"
           maxlength="2"
-          required
           placeholder="YY"
           class="date__year__input input"
         />
+
         <label for="" class="cvc__label label"> CVC </label>
         <input
           type="number"
           name=""
-          id="card_cvc"
+          id="cvcInput"
           oninput="if(this.value.length > this.maxLength) this.value=this.value.slice(0,this.maxLength)"
           minlength="3"
           maxlength="3"
-          required
           placeholder="e.g. 123"
           class="cvc__input input"
         />
+        <p class="mesagge_error cvc__input__error">Can't be blank</p>
       </div>
-      <input type="submit" value="Confirm" class="form__button" />
+      <input type="submit" value="Confirm" class="form__button" id="btn" />
     </form>
     <!-- Completed state start -->
-    <div class="confirm">
+    <div class="confirm hidden">
       <img src="./images/icon-complete.svg" alt="complete" />
       <h2>Thank you!</h2>
       <p>We've added your card details</p>
-      <button>Continue</button>
+      <button class="confirm__btn">Continue</button>
     </div>
 
     <!-- <div class="attribution">
