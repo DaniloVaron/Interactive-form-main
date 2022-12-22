@@ -204,6 +204,7 @@ body {
   margin-top: 95px;
   display: grid;
   align-content: center;
+  justify-content: center;
   justify-items: center;
 }
 
@@ -212,7 +213,7 @@ body {
 }
 
 .confirm__btn {
-  width: 100%;
+  width: 400px;
   padding: 15px 50px;
   border: none;
   border-radius: 0.5rem;
